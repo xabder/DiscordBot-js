@@ -1,0 +1,17 @@
+{
+  "name": "discordbot-js",
+  "version": "1.0.0",
+  "description": "A Discord bot made with discord.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "upcom": "node deploy-commands.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.1",
+    "discord.js": "^14.2.0",
+    "dotenv": "^16.0.1"
+  }
+}
