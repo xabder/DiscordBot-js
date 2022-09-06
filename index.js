@@ -10,6 +10,18 @@ const token = process.env.token;
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
+const functionPath = './functions';
+const functionFolders = fs.readdirSync(functionPath);
+for (const folder of functionFolders) {
+  const functionFiles = fs.readdirSync(`${functionPath}/${folder}`).filter((file) => file.endsWith('.js'));
+
+  for (const file of functionFiles) {
+    require(`${functionPath}/${folder}/${file}`)(client);
+  }
+}
+client.handleEvents();
+client.handleCommands();
+/*
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
 
@@ -46,6 +58,6 @@ client.on('interactionCreate', async (interaction) => {
     await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
   }
 });
-
+*/
 // Login to Discord with your client's token
 client.login(token);
