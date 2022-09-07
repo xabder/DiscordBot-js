@@ -1,6 +1,8 @@
+const { InteractionType } = require('discord.js');
+
 module.exports = {
   name: 'interactionCreate',
-  execute(interaction, client) {
+  async execute(interaction, client) {
     if (interaction.isChatInputCommand()) {
       const { commands } = client;
       const { commandName } = interaction;
@@ -22,6 +24,17 @@ module.exports = {
       } catch (error) {
         console.error(error);
         interaction.reply({ content: 'There was an error while executing this button!', ephemeral: true });
+      }
+    } else if (interaction.type == InteractionType.ModalSubmit) {
+      const { modals } = client;
+      const { customId } = interaction;
+      const modal = modals.get(customId);
+      if (!modal) return new Error('Modal not found');
+      try {
+        modal.execute(interaction, client);
+      } catch (error) {
+        console.error(error);
+        interaction.reply({ content: 'There was an error while executing this modal!', ephemeral: true });
       }
     }
   },

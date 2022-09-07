@@ -10,6 +10,10 @@ const token = process.env.token;
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
+client.buttons = new Collection();
+client.modals = new Collection();
+client.commandArray = [];
+
 const functionPath = './functions';
 const functionFolders = fs.readdirSync(functionPath);
 for (const folder of functionFolders) {
