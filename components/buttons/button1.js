@@ -1,8 +1,10 @@
+const { ChannelType } = require('discord.js');
+
 module.exports = {
   data: {
-    name: 'button1',
+    name: 'ticket1',
   },
   async execute(interaction) {
-    await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
+    // Get the name from the button that was clicked
   },
 };
