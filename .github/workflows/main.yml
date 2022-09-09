@@ -50,6 +50,6 @@ jobs:
 
         run: |
           echo ${{env.token}}
-          echo token="'${{env.token}}'" >> .env
+          echo token='"${{env.token}}"' >> .env
           echo clientId="${{ secrets.CLIENTID }}" >> .env
           echo guildId="${{ secrets.GUILDID }}" >> .env
