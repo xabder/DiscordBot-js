@@ -48,8 +48,7 @@ jobs:
           clientId: ${{ secrets.CLIENTID }}
           guildId: ${{ secrets.GUILDID }}
 
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project
-          echo $token
-          echo Token should have run by now
+      - run: |
+          echo token="$token" >> .env
+          echo clientId="$clientId" >> .env
+          echo guildId="$guildId" >> .env
