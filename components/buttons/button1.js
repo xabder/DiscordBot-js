@@ -6,5 +6,6 @@ module.exports = {
   },
   async execute(interaction) {
     // Get the name from the button that was clicked
+    // Cant get the name
   },
 };
