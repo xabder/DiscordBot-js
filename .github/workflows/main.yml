@@ -49,6 +49,8 @@ jobs:
           guildId: ${{ secrets.GUILDID }}
 
         run: |
+          testmsg=$(token="${{env.token}}" >> .env)
+          echo $testmsg
           echo token="${{env.token}}" >> .env
           echo clientId="${{ secrets.CLIENTID }}" >> .env
           echo guildId="${{ secrets.GUILDID }}" >> .env
