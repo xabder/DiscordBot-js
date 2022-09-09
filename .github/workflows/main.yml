@@ -48,7 +48,6 @@ jobs:
           clientId: ${{ secrets.CLIENTID }}
           guildId: ${{ secrets.GUILDID }}
 
-      - run: |
-          echo token="$token" >> .env
-          echo clientId="$clientId" >> .env
-          echo guildId="$guildId" >> .env
+      - run: echo token="$token" >> .env
+      - run: echo clientId="$clientId" >> .env
+      - run: echo guildId="$guildId" >> .env
