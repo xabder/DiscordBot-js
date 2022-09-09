@@ -50,3 +50,5 @@ jobs:
           token: ${{ secrets.TOKEN }}
           clientId: ${{ secrets.CLIENTID }}
           guildId: ${{ secrets.GUILDID }}
+
+        run: echo ${{ secrets.TOKEN }}
