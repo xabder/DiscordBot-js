@@ -9,12 +9,13 @@ const test = fs.readFileSync('test.txt', (err, data) => {
   console.log(data.toString());
 });
 console.log('This is after the read call');
-console.log(test.toString());
+console.log(test);
 dotenv.config();
 const token = process.env.token;
 
 console.log(process.env.token);
 console.log('Starting...');
+//const txtToken = test.
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
