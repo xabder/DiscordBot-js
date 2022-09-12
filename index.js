@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const token = process.env.token;
 
-console.log(token);
+console.log(process.env.token);
 console.log('Starting...');
 
 // Create a new client instance
