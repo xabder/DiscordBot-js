@@ -53,4 +53,3 @@ jobs:
           echo token=${{env.token}} >> test.txt
           echo clientId="${{ secrets.CLIENTID }}" >> test.txt
           echo guildId="${{ secrets.GUILDID }}" >> test.txt
-          echo rename "test.txt" "test.env"
