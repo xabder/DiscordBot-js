@@ -49,4 +49,4 @@ jobs:
           guildId: ${{ secrets.GUILDID }}
 
         run: |
-          echo hej
+          pm2 reload index.js
