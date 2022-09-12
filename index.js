@@ -3,10 +3,12 @@ const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const dotenv = require('dotenv');
 
+console.log('Starting...');
 fs.readFile('test.txt', (err, data) => {
   if (err) throw err;
   console.log(data.toString());
 });
+console.log('This is after the read call');
 
 dotenv.config();
 const token = process.env.token;
