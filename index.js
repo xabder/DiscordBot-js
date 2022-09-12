@@ -4,7 +4,7 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const dotenv = require('dotenv');
 
 console.log('Starting...');
-fs.readFile('test.txt', (err, data) => {
+fs.readFileSync('test.txt', (err, data) => {
   if (err) throw err;
   console.log(data.toString());
 });
