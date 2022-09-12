@@ -9,7 +9,7 @@ const test = fs.readFileSync('test.txt', (err, data) => {
   console.log(data.toString());
 });
 console.log('This is after the read call');
-console.log(test);
+
 dotenv.config();
 const token = process.env.token;
 
