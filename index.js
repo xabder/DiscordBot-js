@@ -1,9 +1,14 @@
-const fs = require('node:fs');
+const fs = require('fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: path.resolve(__dirname, '/w.env') });
+fs.readFile('test.txt', (err, data) => {
+  if (err) throw err;
+  console.log(data.toString());
+});
+
+dotenv.config();
 const token = process.env.token;
 
 console.log(process.env.token);
