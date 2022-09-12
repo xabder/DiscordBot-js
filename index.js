@@ -3,19 +3,11 @@ const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const dotenv = require('dotenv');
 
-console.log('Starting...');
-const test = fs.readFileSync('test.txt', (err, data) => {
-  if (err) throw err;
-  console.log(data.toString());
-});
-console.log('This is after the read call');
-
 dotenv.config();
 const token = process.env.token;
 
 console.log(process.env.token);
 console.log('Starting...');
-//const txtToken = test.
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
