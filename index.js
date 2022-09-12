@@ -6,9 +6,6 @@ const dotenv = require('dotenv');
 dotenv.config({ path: 'E:/envfiles/.env' });
 const token = process.env.token;
 
-console.log(process.env.token);
-console.log('Starting...');
-
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
