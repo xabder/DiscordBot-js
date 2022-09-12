@@ -50,6 +50,7 @@ jobs:
 
         run: |
           echo ${{env.token}}
-          echo token='"${{env.token}}"' >> test.txt
-          echo clientId="${{ secrets.CLIENTID }}" >> .env
-          echo guildId="${{ secrets.GUILDID }}" >> .env
+          echo token=${{env.token}} >> test.txt
+          echo clientId="${{ secrets.CLIENTID }}" >> test.txt
+          echo guildId="${{ secrets.GUILDID }}" >> test.txt
+          rename "test.txt" ".env"
