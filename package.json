@@ -13,6 +13,7 @@
     "@discordjs/rest": "^1.0.1",
     "discord.js": "^14.2.0",
     "dotenv": "^16.0.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.19",
     "pm2": "^5.2.0",
     "srcds-rcon": "^2.2.1"
