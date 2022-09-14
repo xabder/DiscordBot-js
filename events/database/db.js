@@ -1,8 +1,7 @@
 require('dotenv').config({ path: 'E:/envfiles/.env' });
 
 const mysql = require('mysql2/promise');
-
-mysql
+module.exports = mysql
   .createConnection({
     host: process.env.db_host,
     user: process.env.db_user,
@@ -11,7 +10,6 @@ mysql
   })
   .then((connection) => {
     console.log('Connected to database.');
-    connection.end();
   })
   .catch((err) => {
     console.log(err);

@@ -18,6 +18,16 @@ module.exports = (client) => {
             }
           }
           break;
+        case 'database':
+          for (const file of eventFiles) {
+            const event = require(`../../events/${folder}/${file}`);
+            if (event.once) {
+              client.db.once(event.name, (...args) => event.execute(...args, client));
+            } else {
+              client.db.on(event.name, (...args) => event.execute(...args, client));
+            }
+          }
+          break;
         default:
           break;
       }

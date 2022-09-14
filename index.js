@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 dotenv.config({ path: 'E:/envfiles/.env' });
 const token = process.env.token;
 
+let connection;
+
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -27,5 +29,8 @@ client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 
+(async () => {
+  connection = await require('../events/database/db.js');
+})();
 // Login to Discord with your client's token
 client.login(token);
