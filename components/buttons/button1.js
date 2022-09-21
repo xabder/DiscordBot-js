@@ -25,9 +25,9 @@ module.exports = {
       ],
     });
     await interaction.reply({
-      content: `${interaction.user}`,
+      content: `Your ticket has been created in ${channel}`,
       ephemeral: true,
     });
-    await channel.send(`Hello, how can I help you today?`);
+    await channel.send(`Hej ${interaction.user}, hvordan kan jeg hjælpe dig?`);
   },
 };
