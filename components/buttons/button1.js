@@ -11,27 +11,9 @@ module.exports = {
       name: `general-${username}`,
       type: ChannelType.GUILD_TEXT,
       parent: interaction.guild.channels.cache.find((channel) => channel.name === 'General Support'),
-      permissionOverwrites: [
-        {
-          id: interaction.guild.roles.everyone,
-          deny: PermissionsBitField.Flags.ViewChannel,
-        },
-        {
-          id: interaction.user.id,
-          allow: PermissionsBitField.Flags.ViewChannel,
-          allow: PermissionsBitField.Flags.SendMessages,
-          allow: PermissionsBitField.Flags.ReadMessageHistory,
-          allow: PermissionsBitField.Flags.AddReactions,
-        },
-        {
-          id: interaction.guild.roles.cache.find((role) => role.name === 'Admin'),
-          allow: PermissionsBitField.Flags.ViewChannel,
-          allow: PermissionsBitField.Flags.SendMessages,
-          allow: PermissionsBitField.Flags.ReadMessageHistory,
-          allow: PermissionsBitField.Flags.AddReactions,
-        },
-      ],
     });
+    channel.lockPermissions();
+    channel.permissionOverwrites.create(interaction.user.id, { ViewChannel: true, SendMessages: true, AddReactions: true });
     await interaction.reply({
       content: `Your ticket has been created in ${channel}`,
       ephemeral: true,
