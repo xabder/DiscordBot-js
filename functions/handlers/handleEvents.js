@@ -24,7 +24,7 @@ module.exports = (client) => {
             if (event.once) {
               client.db.once(event.name, (...args) => event.execute(...args, client));
             } else {
-              client.db.on(event.name, (...args) => event.execute(...args, client));
+              //client.db.on(event.name, (...args) => event.execute(...args, client));
             }
           }
           break;
