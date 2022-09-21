@@ -18,14 +18,12 @@ module.exports = {
         },
         {
           id: interaction.user.id,
-          allow: PermissionsBitField.Flags.ViewChannel,
           allow: PermissionsBitField.Flags.SendMessages,
           allow: PermissionsBitField.Flags.ReadMessageHistory,
           allow: PermissionsBitField.Flags.AddReactions,
         },
         {
-          id: interaction.guild.roles.cache.find((role) => role.name === 'Admin'),
-          allow: PermissionsBitField.Flags.ViewChannel,
+          id: interaction.guild.roles.cache.find((role) => role.name === 'TestRole'),
           allow: PermissionsBitField.Flags.SendMessages,
           allow: PermissionsBitField.Flags.ReadMessageHistory,
           allow: PermissionsBitField.Flags.AddReactions,
