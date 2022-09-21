@@ -23,7 +23,7 @@ module.exports = {
           allow: PermissionsBitField.Flags.AddReactions,
         },
         {
-          id: interaction.guild.roles.admin,
+          id: interaction.guild.roles.cache.find((role) => role.name === 'Admin'),
           allow: PermissionsBitField.Flags.SendMessages,
           allow: PermissionsBitField.Flags.ReadMessageHistory,
           allow: PermissionsBitField.Flags.AddReactions,
