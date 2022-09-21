@@ -30,7 +30,8 @@ client.handleCommands();
 client.handleComponents();
 
 (async () => {
-  connection = await require('../events/database/db.js');
+  connection = await require('./events/database/db.js');
+  //connection = await require('../events/database/db.js');
 })();
 // Login to Discord with your client's token
 client.login(token);
