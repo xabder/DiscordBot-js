@@ -1,4 +1,4 @@
-const { ChannelType } = require('discord.js');
+const { ChannelType, PermissionsBitField } = require('discord.js');
 
 module.exports = {
   data: {
@@ -7,16 +7,17 @@ module.exports = {
   async execute(interaction) {
     // get name of user who clicked button and create a channel with their name, everyone is allowed to see the channel
     const channelName = interaction.user.username;
-    const channel = await interaction.guild.channels.create(channelName, {
-      type: ChannelType.GUILD_TEXT,
+    const channel = await interaction.guild.channels.create({
+      name: channelName,
+      type: ChannelType.GuildText,
       permissionOverwrites: [
         {
           id: interaction.guild.roles.everyone,
-          allow: ['VIEW_CHANNEL'],
+          allow: [PermissionsBitField.Flags.ViewChannel],
         },
         {
           id: interaction.user.id,
-          allow: ['VIEW_CHANNEL', 'SEND_MESSAGES', 'READ_MESSAGE_HISTORY'],
+          allow: [PermissionsBitField.Flags.ViewChannel, PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.ReadMessageHistory],
         },
       ],
     });
