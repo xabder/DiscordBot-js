@@ -14,13 +14,13 @@ module.exports = {
       permissionOverwrites: [
         {
           id: interaction.guild.roles.everyone,
-          deny: PermissionsBitField.FLAGS.VIEW_CHANNEL,
+          deny: PermissionsBitField.Flags.ViewChannel,
         },
         {
           id: interaction.user.id,
-          allow: PermissionsBitField.FLAGS.SEND_MESSAGES,
-          allow: PermissionsBitField.FLAGS.READ_MESSAGE_HISTORY,
-          allow: PermissionsBitField.FLAGS.ADD_REACTIONS,
+          allow: PermissionsBitField.Flags.SendMessages,
+          allow: PermissionsBitField.Flags.ReadMessageHistory,
+          allow: PermissionsBitField.Flags.AddReactions,
         },
       ],
     });
