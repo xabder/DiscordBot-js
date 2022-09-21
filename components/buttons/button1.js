@@ -28,6 +28,7 @@ module.exports = {
       content: `Your ticket has been created in ${channel}`,
       ephemeral: true,
     });
+    // Send a embed to the channel with the title "Generel Support" and the description "Hej, hvordan kan jeg hjælpe dig i dag?" and then add a button with the label "Close" and the style "DANGER" and the custom id "close"
     await channel.send(`Hej ${interaction.user}, hvordan kan jeg hjælpe dig?`);
   },
 };
