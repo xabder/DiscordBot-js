@@ -22,6 +22,12 @@ module.exports = {
           allow: PermissionsBitField.Flags.ReadMessageHistory,
           allow: PermissionsBitField.Flags.AddReactions,
         },
+        {
+          id: interaction.guild.roles.admin,
+          allow: PermissionsBitField.Flags.SendMessages,
+          allow: PermissionsBitField.Flags.ReadMessageHistory,
+          allow: PermissionsBitField.Flags.AddReactions,
+        },
       ],
     });
     await interaction.reply({
@@ -30,11 +36,10 @@ module.exports = {
     });
     // Send a embed to the channel with the title "Generel Support" and the description "Hej, hvordan kan jeg hjælpe dig i dag?" and then add a button with the label "Close" and the style "DANGER" and the custom id "close"
     await channel.send({
-      content: `${interaction.user}`,
       embeds: [
         {
           title: 'Generel Support',
-          description: 'Hej, hvordan kan jeg hjælpe dig i dag?',
+          description: `Hej ${interaction.user}, hvordan kan jeg hjælpe dig i dag?`,
         },
       ],
       components: [
