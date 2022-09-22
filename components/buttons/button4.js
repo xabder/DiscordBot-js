@@ -2,7 +2,7 @@ const { ChannelType, PermissionsBitField } = require('discord.js');
 
 module.exports = {
   data: {
-    name: 'ticket4',
+    name: 'ticket3',
   },
   async execute(interaction) {
     // get name of user who clicked button and create a channel where the channel is named generel and then their name, the channel should be in the category named "Generel Support" inherit permissions from the category and then add the user who clicked the button to the channel and give them the permission to send messages, read messages and add reactions, mention the user who clicked the button and then send a message to the channel saying "Hello, how can I help you today?"
