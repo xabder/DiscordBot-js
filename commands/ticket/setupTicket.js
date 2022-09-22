@@ -14,6 +14,7 @@ module.exports = {
     const button3 = new ButtonBuilder().setCustomId('ticket3').setLabel('Admin Klage').setStyle(ButtonStyle.Secondary).setEmoji('📜');
     const button4 = new ButtonBuilder().setCustomId('ticket4').setLabel('Køb/Handel').setStyle(ButtonStyle.Success).setEmoji('💸');
     const row = new ActionRowBuilder().addComponents(button1, button2, button3, button4);
-    await interaction.channel.sendMessage({ content: 'Ticket Categories', components: [row] });
+    await interaction.channel.send({ content: 'Ticket Categories', components: [row] });
+    // send a message not reply to one
   },
 };
